@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Qaisar Zhumabay — Personal Website</title>
+    <meta name="description" content="Qaisar Zhumabay — 10th grade student passionate about IT and science. Web, Python, data and AI. Portfolio, skills, projects.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main background: AI particles animation -->
+    <canvas id="ai-bg" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">
+                <span class="logo" aria-hidden="true">QZ</span>
+                <div class="brand-text">
+                    <strong>Qaisar Zhumabay</strong>
+                    <small>Student · IT · Projects · AI</small>
+                </div>
+            </div>
+            <!-- Navigation in a single button -->
+            <div class="menu">
+                <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="menu-dropdown">
+                    Menu
+                </button>
+                <div id="menu-dropdown" class="menu-dropdown" hidden>
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#weaknesses">Weaknesses</a>
+                    <a href="#goals">Goals</a>
+                    <a href="#why">Why me?</a>
+                    <a href="#contact" class="btn">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container" aria-label="Introduction">
+            <div class="hero-content">
+                <h1>Hi! I'm <span class="accent">Qaisar</span></h1>
+                <p class="typewriter" id="typewriter" aria-live="polite">Technology · Programming · AI</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View portfolio</a>
+                    <a href="#about" class="btn btn-ghost">Learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section container reveal">
+            <h2>About me</h2>
+            <p>
+                My name is Qaisar Zhumabay. I am a 10th grade student and I am especially interested in technology, programming and developing my own projects. Even now I am combining what I learn at school with real digital products and systematically building a path that is focused on results.
+            </p>
+            <p>
+                What makes me stand out is structured thinking, fast learning and the ability to turn ideas into results. I do not limit myself to theory; I consider it important to create projects that actually work and bring value.
+            </p>
+        </section>
+
+        <section id="education" class="section container reveal">
+            <h2>Education</h2>
+            <ul class="list">
+                <li><strong>School:</strong> 10th grade (Kazakhstan)</li>
+                <li><strong>Main interests:</strong> IT, programming, science and analytical thinking, engineering and project-based approaches</li>
+                <li>I am considering studying in an international environment and actively exploring internships, scholarships and overseas education programs.</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="section container reveal">
+            <h2>Skills and strengths</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>Technical</h3>
+                    <ul class="list">
+                        <li>Python (games, logic, algorithms)</li>
+                        <li>Web development: HTML, CSS, JavaScript</li>
+                        <li>Node.js, basics of SQL</li>
+                        <li>Working with databases (Supabase)</li>
+                        <li>Designing platform and service logic</li>
+                        <li>Basics of UI/UX and product thinking</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Personal qualities</h3>
+                    <ul class="list">
+                        <li>I learn quickly and grasp new technologies easily</li>
+                        <li>I can work independently and take responsibility</li>
+                        <li>I approach tasks analytically</li>
+                        <li>I think several steps ahead</li>
+                        <li>I am result-oriented</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="section container reveal">
+            <h2>Projects and experience</h2>
+            <ul class="list">
+                <li>Developing web platforms and interactive services</li>
+                <li>Creating game and educational projects in Python</li>
+                <li>Working on my startup ideas and online platforms</li>
+                <li>Interest in chatbots, including solutions with voice interfaces</li>
+            </ul>
+            <p class="note">I enjoy projects that combine programming, logic and real-world application.</p>
+        </section>
+
+        <section id="weaknesses" class="section container reveal">
+            <h2>Weaknesses (and how I work on them)</h2>
+            <ul class="list">
+                <li>Sometimes I take on too many tasks at once → I am learning to plan my time and set priorities</li>
+                <li>I can be overly demanding about quality → I am looking for a balance between perfection and deadlines</li>
+                <li>I like to do many things myself → I am developing teamwork and delegation skills</li>
+            </ul>
+        </section>
+
+        <section id="goals" class="section container reveal">
+            <h2>Goals</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>Short-term</h3>
+                    <ul class="list">
+                        <li>Develop my portfolio</li>
+                        <li>Participate in international programs and internships</li>
+                        <li>Deepen my programming and analytics skills</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Long-term</h3>
+                    <ul class="list">
+                        <li>Study at an international university</li>
+                        <li>Create technology products with social impact</li>
+                        <li>Grow as a professional and entrepreneur in IT</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="why" class="section container reveal">
+            <h2>Why work or study with me</h2>
+            <p>
+                I do not look for the easy way: I am interested in challenging tasks, growth and long-term results. I am open to new opportunities, collaboration and learning, especially in international and professional environments.
+            </p>
+        </section>
+
+        <section id="contact" class="section container reveal">
+            <h2>Contact</h2>
+            <div class="contact">
+                <div>
+                    <p><strong>Email:</strong> <a href="mailto:qaisar@example.com">qaisar@example.com</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a></p>
+                </div>
+                <div class="cta">
+                    <a href="https://github.com/internat/Bugalter" target="_blank" rel="noopener" class="btn btn-primary">View projects</a>
+                </div>
+            </div>
+            <p class="note">Note: This site does not use any API keys. For security, do not publish your keys openly.</p>
+        </section>
+        <!-- Premium AI assistant: round button and chat -->
+        <button id="ai-assistant-btn" aria-label="AI assistant" class="ai-assist-button">
+            <span class="avatar">👩‍💻</span>
+            <span class="ring"></span>
+        </button>
+    
+        <div id="ai-assistant" class="ai-assist-panel" hidden>
+            <div class="ai-assist-header">
+                <div class="assistant-id">
+                    <span class="avatar">👩‍💻</span>
+                    <div>
+                        <strong>Assistant</strong>
+                        <small>Answers with information about Qaisar</small>
+                    </div>
+                </div>
+                <button class="close" aria-label="Close">×</button>
+            </div>
+            <div class="ai-messages" role="log" aria-live="polite">
+                <div class="msg assistant">
+                    Hi! I am your AI assistant. Ask a question about Qaisar, for example: “What are Qaisar’s skills?”, “What are his goals?”, “How old is he?” or “What projects does he have?”
+                </div>
+            </div>
+            <form class="ai-input" autocomplete="off">
+                <input id="ai-prompt" type="text" name="q" placeholder="Type your question..." aria-label="Question">
+                <button class="send" type="submit" aria-label="Send">↵</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 · Qaisar Zhumabay · IT and AI fields</p>
+        </div>
+    </footer>
+
+    <noscript>
+        There are light animations on this site. If you do not want animations, turn on the “prefers-reduced-motion” setting.
+    </noscript>
+
+    <script src="script.js"></script>
+</body>
+</html>

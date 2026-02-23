@@ -1,0 +1,450 @@
+:root {
+  --bg: #ffffff;
+  --bg-weak: #f5f9ff;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #0d6efd;
+  --primary-2: #3ab0ff;
+  --border: #e2e8f0;
+  --card: #ffffff;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(13,110,253,0.08);
+}
+
+/* Негізгі фон: ақ‑көк нәзік градиент */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(58,176,255,0.12), transparent 60%),
+    radial-gradient(1200px 800px at -10% 20%, rgba(13,110,253,0.12), transparent 55%),
+    var(--bg);
+  font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ИИ фонға арналған canvas */
+#ai-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Құрылым */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: saturate(1.2) blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 2;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  width: 36px; height: 36px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: white; font-weight: 700;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.35);
+}
+.brand-text small {
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.nav a:hover {
+  color: var(--primary);
+  background: var(--bg-weak);
+}
+.nav .btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(13,110,253,0.25);
+}
+
+/* Hero */
+.hero {
+  padding: 70px 0 20px;
+}
+.hero-content h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+.hero .accent {
+  color: var(--primary);
+}
+.typewriter {
+  font-size: 18px;
+  color: var(--muted);
+  min-height: 28px;
+}
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Батырмалар */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+  border: none;
+}
+.btn-ghost {
+  background: transparent;
+}
+
+/* Бөлімдер */
+.section {
+  padding: 36px 0;
+}
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* Тізімдер, ескертпе */
+.list {
+  margin: 0;
+  padding-left: 18px;
+}
+.list li { margin: 6px 0; }
+.note {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Карточкалар */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -40% -40% auto auto;
+  width: 200px; height: 200px;
+  background: radial-gradient(closest-side, rgba(13,110,253,0.16), transparent);
+  transform: translate3d(0,0,0);
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(13,110,253,0.15);
+}
+.card h3 { margin-top: 0; }
+
+/* Байланыс */
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Төменгі колонтитул */
+.site-footer {
+  padding: 30px 0 40px;
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(6px);
+}
+.site-footer p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Адаптив */
+@media (max-width: 880px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 34px; }
+  .nav { gap: 8px; flex-wrap: wrap; }
+}
+
+/* Қозғалысты азайтқысы келетіндерге құрмет */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .card { transition: none; }
+  #ai-bg { display: none; }
+}
+
+/* Reveal: бөлімдер нәзік пайда болады */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 380ms ease, transform 420ms cubic-bezier(0.2,0.7,0.2,1);
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blink: кейбір мәтіндердің уақытша «сөнуі/жану» */
+.blink {
+  transition: opacity 260ms ease;
+  opacity: 0.25;
+}
+
+/* ИИ ассистент дөңгелек батырма (премиум) */
+.ai-assist-button {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #fff 0%, #f5faff 100%);
+  box-shadow: 0 12px 30px rgba(13,110,253,0.18), inset 0 0 0 1px var(--border);
+  z-index: 3;
+}
+.ai-assist-button .avatar {
+  font-size: 26px;
+  transform: translateY(1px);
+}
+.ai-assist-button .ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 0 0 rgba(13,110,253,0.35);
+  animation: pulse 1800ms infinite ease-out;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(13,110,253,0.32); }
+  100% { box-shadow: 0 0 0 16px rgba(13,110,253,0); }
+}
+
+/* ИИ ассистент панелі (glass, premium) */
+.ai-assist-panel {
+  position: fixed;
+  right: 22px;
+  bottom: 96px;
+  width: min(420px, calc(100% - 44px));
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: saturate(1.2) blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(13,110,253,0.14);
+  overflow: hidden;
+  z-index: 4;
+  transform: translateY(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+.ai-assist-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.ai-assist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.ai-assist-header .assistant-id {
+  display: flex; align-items: center; gap: 10px;
+}
+.ai-assist-header .assistant-id .avatar {
+  width: 32px; height: 32px; display: grid; place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(13,110,253,0.25);
+}
+.ai-assist-header .close {
+  font-size: 22px; line-height: 1; border: none; background: transparent; cursor: pointer; color: var(--muted);
+}
+.ai-messages {
+  max-height: 48vh;
+  overflow: auto;
+  padding: 12px 14px 8px;
+  display: grid;
+  gap: 8px;
+}
+.msg {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 8px 20px rgba(13,110,253,0.08);
+  font-size: 15px;
+}
+.msg.assistant {
+  border-color: rgba(13,110,253,0.22);
+  background: linear-gradient(180deg, #fff, #f8fbff);
+}
+.msg.user {
+  justify-self: end;
+  background: #fff;
+}
+.ai-input {
+  display: grid; grid-template-columns: 1fr auto; gap: 8px;
+  padding: 12px 14px 14px;
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,0.86);
+}
+.ai-input input {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 15px;
+}
+.ai-input .send {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(13,110,253,0.18);
+  cursor: pointer;
+}
+
+/* МӘЗІР (ашылмалы, премиум минимализм) */
+.menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.menu-toggle {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(13,110,253,0.12);
+}
+.menu-toggle:hover {
+  color: var(--primary);
+  background: var(--bg-weak);
+}
+.menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 240px;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: saturate(1.2) blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(13,110,253,0.15);
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+}
+.menu-dropdown a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+.menu-dropdown a:hover {
+  background: var(--bg-weak);
+  color: var(--primary);
+}
+
+/* Мәтін аралықтарын үлкейту: оқылымды премиум деңгей */
+.section { padding: 44px 0; }                 /* бұрын 36px еді */
+.section p { margin: 10px 0 16px; line-height: 1.85; letter-spacing: 0.1px; }
+.list { padding-left: 20px; }
+.list li { margin: 10px 0; }                  /* бұрын 6px еді */
+.cards { gap: 18px; }                          /* бұрын 14px еді */
+
+/* Hero мәтініне аздап кеңістік */
+.typewriter { margin-top: 6px; }
+
+/* Ұялыға ыңғайлау */
+@media (max-width: 880px) {
+  .menu-dropdown {
+    right: 10px;
+    width: calc(100vw - 20px);
+  }
+}
+
+/* Мәзір ашылмасын (hidden болса — толық жасыр) */
+.menu-dropdown[hidden] {
+  display: none !important;
+}
+}
